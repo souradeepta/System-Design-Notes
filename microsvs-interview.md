@@ -6,7 +6,7 @@
 
 2. For example for amazon you can separate the buyer and seller and admin
 
-3. Monolothic is all in one. SOA has services inside an app with use of interfaces. Microservices are more segregated with for example separate auth layers for each micro service
+3.Monolothic is all in one. SOA has services inside an app with use of interfaces. Microservices are more segregated with for example separate auth layers for each micro service
 
 4. Designing microservices is to understand users, how relationships are mapped and how are they dependent  and design databases accordingly
 
