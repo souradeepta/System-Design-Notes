@@ -14,6 +14,7 @@
 1. Frontend: lots of scaled frontends as ReactJS hosted on a cloud. Load balance like NGINX/ELB
 2. Backend: Many NodeJS instance
 3.  Data: Casandara instanes
+
 ![3 tier system ](./images/3tier.PNG)
 
 ##### CASANDRA:
@@ -39,14 +40,16 @@
 *  break application into pieces such that each one works as non distributed system
 *  router here can be zookeeper
 *  slack uses this since it can have shards based on organizations
+
 ![Shareded ](./images/sharded.PNG)
 
 When Sharding Attack occurs
-![Sharding attack ](./images/shard.PNG)
 *  zookeeper helps elect a master.
 *  master handles writes and slaves handle reads
 * long Garbage collector pause or network switch down can cause partitions and slaves ask zookeeper to elect a master and then this might cause two masters
 *  re sharding is also hard
+
+![Sharding attack ](./images/shard.PNG)
 
 **STRENGTHS**
 1.  Client isolation is easy (data and deployment) eg. EURO GDRP data separate from others
@@ -59,6 +62,7 @@ When Sharding Attack occurs
 
 
 Solution: aggregate the data into a larger database for ETL, Logging
+
 ![Cassandra DB ](./images/cas.PNG)
 
 ### III. LAMBDA
@@ -68,6 +72,7 @@ Solution: aggregate the data into a larger database for ETL, Logging
 *  One for bounded and one for unbounded
 
 ![Lambda ](./images/lambda.PNG)
+
 ![Infra ](./images/lar.PNG)
 
 #### KAFKA (distributed mq)
