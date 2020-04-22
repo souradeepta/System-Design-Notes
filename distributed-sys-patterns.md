@@ -14,7 +14,7 @@
 1. Frontend: lots of scaled frontends as ReactJS hosted on a cloud. Load balance like NGINX/ELB
 2. Backend: Many NodeJS instance
 3.  Data: Casandara instanes
-![3 tier system ](/images/3tier.png)
+![3 tier system ](./images/3tier.png)
 
 ##### CASANDRA:
 1. All nodes are same, peer-peer DB with no central node
@@ -23,7 +23,7 @@
 4. Replication can be done incase of node failure by writing the write replicas in the next 2 nodes as a walk
 5. Now the problem is if the data is mutable and a GARBAGE COLLECTOR PAUSE causes inconsistency between    the three copies? ( https://docs.datastax.com/en/dse-trblshoot/doc/troubleshooting/gcPauses.html)
 
-![Cassandra ](/images/cass.png)
+![Cassandra ](./images/cass.png)
 
 **STRENGTHS**
 1. Rich front-end framework(scale, UX)
@@ -39,10 +39,10 @@
 *  break application into pieces such that each one works as non distributed system
 *  router here can be zookeeper
 *  slack uses this since it can have shards based on organizations
-![Shareded ](/images/sharded.png)
+![Shareded ](./images/sharded.png)
 
 When Sharding Attack occurs
-![Sharding attack ](/images/shard.png)
+![Sharding attack ](./images/shard.png)
 *  zookeeper helps elect a master.
 *  master handles writes and slaves handle reads
 * long Garbage collector pause or network switch down can cause partitions and slaves ask zookeeper to elect a master and then this might cause two masters
@@ -59,7 +59,7 @@ When Sharding Attack occurs
 
 
 Solution: aggregate the data into a larger database for ETL, Logging
-![Cassandra DB ](/images/cas.png)
+![Cassandra DB ](./images/cas.png)
 
 ### III. LAMBDA
 *  Not a general purpose arch. more of a day of dealing with analysis. 
@@ -67,8 +67,8 @@ Solution: aggregate the data into a larger database for ETL, Logging
 *  Assumes data is unbounded and immutable
 *  One for bounded and one for unbounded
 
-![Lambda ](/images/lambda.png)
-![Infra ](/images/lar.png)
+![Lambda ](./images/lambda.png)
+![Infra ](./images/lar.png)
 
 #### KAFKA (distributed mq)
 *  divide topics into multiple brokers.
@@ -76,7 +76,7 @@ Solution: aggregate the data into a larger database for ETL, Logging
 *  Ordering only maintained between partitions but not whole topics
 *  we are giving up on ordering since distributed system
 
-![topics ](/images/kafka.png)
+![topics ](./images/kafka.png)
 
 **STRENGTHS**
 1.  Optimizes subsystems based on operational requirements
